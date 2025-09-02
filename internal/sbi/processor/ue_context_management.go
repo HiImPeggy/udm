@@ -400,7 +400,8 @@ func (p *Processor) UpdateAmfNon3gppAccessProcedure(c *gin.Context,
 	if request.PurgeFlag {
 		var patchItemTmp models.PatchItem
 		patchItemTmp.Path = "/" + "purgeFlag"
-		patchItemTmp.Op = models.PatchOperation_REPLACE
+		// patchItemTmp.Op = models.PatchOperation_REPLACE
+		patchItemTmp.Op = models.PatchOperation_ADD
 		patchItemTmp.Value = request.PurgeFlag
 		patchItemReqArray = append(patchItemReqArray, patchItemTmp)
 	}
